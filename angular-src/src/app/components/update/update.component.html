@@ -1,0 +1,97 @@
+<div class="container">    
+            
+    <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Update</div>
+                <!-- <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="/accounts/login/">Sign In</a></div> -->
+            </div>  
+            <div class="panel-body" >
+
+
+                            
+
+                    <form  class="form-horizontal" 
+                    [formGroup]="updateForm"
+                    (ngSubmit)="updateHut()" >
+
+
+                        <div id="div_id_username" class="form-group required">
+                            <label for="id_username" class="control-label col-md-4  requiredField">Unit: <span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 ">
+                                <input class="input-md  textinput textInput form-control" disabled [value]="hut.unit" maxlength="30" name="unit" placeholder="Choose your hut unit" style="margin-bottom: 10px" type="text" />
+                            </div>
+                        </div>
+                        <div id="div_id_email" class="form-group required">
+                            <label for="id_email" class="control-label col-md-4  requiredField">Name: <span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 ">
+                                <input class="input-md emailinput form-control" [value]="hut.name" name="name" placeholder="Your hut name" style="margin-bottom: 10px" type="text" formControlName="name" />
+                            </div>     
+                        </div>
+                        <div id="div_id_password1" class="form-group required">
+                            <label for="id_password1" class="control-label col-md-4  requiredField">Rooms: <span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 "> 
+                                <input type="number" min="1" max="5" class="input-md textinput textInput form-control" [value]="hut.rooms" name="rooms" placeholder="Create a password" style="margin-bottom: 10px" formControlName="rooms" />
+                            </div>
+                        </div>
+                        <div id="div_id_password2" class="form-group required">
+                             <label for="id_password2" class="control-label col-md-4  requiredField"> Max. Persons Allowed<span class="asteriskField">*</span> </label>
+                             <div class="controls col-md-8 ">
+                                <input class="input-md textinput textInput form-control" [value]="hut.maxPersonAllowed" name="maxPersonAllowed" placeholder="Confirm your password" style="margin-bottom: 10px" type="text" formControlName="maxPersonAllowed" />
+                            </div>
+                        </div>
+                        <div id="div_id_name" class="form-group required"> 
+                            <label for="id_name" class="control-label col-md-4  requiredField"> Location: <span class="asteriskField">*</span> </label> 
+                            <div class="controls col-md-8 "> 
+                                <input class="input-md textinput textInput form-control" [value]="hut.location" name="location" placeholder="Your Frist name and Last name" style="margin-bottom: 10px" type="text" formControlName="location"/>
+                            </div>
+                        </div>
+                      
+                        <div id="div_id_company" class="form-group required"> 
+                            <label for="id_company" class="control-label col-md-4  requiredField"> Rent<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 "> 
+                                 <input class="input-md textinput textInput form-control" [value]="hut.rent" name="rent" placeholder="your company name" style="margin-bottom: 10px" type="number" formControlName="rent"/>
+                            </div>
+                        </div> 
+                        <div id="div_id_catagory" class="form-group required">
+                            <label for="id_catagory" class="control-label col-md-4  requiredField"> Description<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 "> 
+                                 <input class="input-md textinput textInput form-control" [value]="hut.description" name="description" placeholder="skills catagory" style="margin-bottom: 10px" type="text" formControlName="description"/>
+                            </div>
+                        </div> 
+
+                        <div class="form-group"> 
+                            <div class="aab controls col-md-4 "></div>
+                            <div class="controls col-md-8 ">
+                                 <input type="submit" value="Update" class="btn btn btn-primary" id="button-id-signup" />
+                            </div>
+                        </div> 
+                            
+                    </form>
+                    <flash-messages></flash-messages>
+                    
+
+                
+            </div>
+        </div>
+    </div> 
+</div>
+    
+<br>
+
+<!-- <div class="row">
+
+            <div class="col-lg-12">
+                <h3 class="page-header">Images</h3>
+            </div>
+
+            <div class="col-sm-3 col-xs-6" *ngFor="let images of imgURI; let i=index">
+                <a>
+                    <img class="img-responsive portfolio-item" [src]="'data:image/jpeg;base64,'+images.base64" alt="">
+                </a>
+                <button class="btn btn-primary btn-xs" (click)="deleteImg(images.imgPath)">Delete</button>
+            </div>
+
+
+        </div> -->
+        <br><br><br><br><br><br>

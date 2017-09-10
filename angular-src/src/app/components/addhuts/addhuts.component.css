@@ -1,0 +1,277 @@
+
+
+.info p {
+  text-align:center;
+  color: #999;
+  text-transform:none;
+  font-weight:600;
+  font-size:15px;
+  margin-top:2px
+}
+
+.info i {
+  color:#F6AA93;
+}
+form h1 {
+  font-size: 18px;
+  padding: 22px 25px;
+  border-radius: 5px 5px 0px 0px;
+  margin: 0 auto;
+  text-shadow: none; 
+  text-align:center
+}
+
+form {
+  border-radius: 5px;
+  max-width:700px;
+  width:100%;
+  margin: 5% auto;
+  background-color: #FFFFFF;
+  overflow: hidden;
+}
+
+p span {
+  color: #F00;
+}
+
+p {
+  margin: 0px;
+  font-weight: 500;
+  line-height: 2;
+  color:#333;
+}
+
+h1 {
+  text-align:center; 
+  color: #666;
+  text-shadow: 1px 1px 0px #FFF;
+  margin:50px 0px 0px 0px
+}
+
+input {
+  border-radius: 0px 5px 5px 0px;
+  border: 1px solid #eee;
+  margin-bottom: 15px;
+  width: 75%;
+  height: 40px;
+  float: left;
+  padding: 0px 15px;
+}
+
+a {
+  text-decoration:inherit
+}
+
+textarea {
+  border-radius: 0px 5px 5px 0px;
+  border: 1px solid #EEE;
+  margin: 0;
+  width: 75%;
+  height: 130px; 
+  float: left;
+  padding: 0px 15px;
+}
+
+.form-group {
+  overflow: hidden;
+  clear: both;
+}
+
+.icon-case {
+  width: 35px;
+  float: left;
+  border-radius: 5px 0px 0px 5px;
+  background:#eeeeee;
+  height:42px;
+  position: relative;
+  text-align: center;
+  line-height:40px;
+}
+
+i {
+  color:#555;
+}
+
+.contentform {
+  padding: 40px 30px;
+}
+
+.bouton-contact{
+  background-color: #81BDA4;
+  color: #FFF;
+  text-align: center;
+  width: 100%;
+  border:0;
+  padding: 17px 25px;
+  border-radius: 0px 0px 5px 5px;
+  cursor: pointer;
+  margin-top: 40px;
+  font-size: 18px;
+}
+
+.leftcontact {
+  width:49.5%; 
+  float:left;
+  border-right: 1px dotted #CCC;
+  box-sizing: border-box;
+  padding: 0px 15px 0px 0px;
+}
+
+.rightcontact {
+  width:49.5%;
+  float:right;
+  box-sizing: border-box;
+  padding: 0px 0px 0px 15px;
+}
+
+.validation {
+  display:block;
+  margin: 0 0 10px;
+  font-weight:400;
+  font-size:13px;
+  color: #DE5959;
+}
+
+#sendmessage {
+  border:1px solid #fff;
+  display:none;
+  text-align:center;
+  margin:10px 0;
+  font-weight:600;
+  margin-bottom:30px;
+  background-color: #EBF6E0;
+  color: #5F9025;
+  border: 1px solid #B3DC82;
+  padding: 13px 40px 13px 18px;
+  border-radius: 3px;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.03);
+}
+
+#sendmessage.show,.show  {
+  display:block;
+}
+
+input[type="button"]:disabled{
+    color:#000;
+}
+
+.sebm-google-map-container {
+  height: 300px;
+}
+
+#map {
+        height: 400px;
+        width: 100%;
+       }
+
+       .heading h2{
+        text-align: center;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+
+
+
+
+
+
+      #loading {
+        background: #f4f4f2 url("img/page-bg.png") repeat scroll 0 0;
+        height: 100%;
+        left: 0;
+        margin: auto;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+    .bokeh {
+        border: 0.01em solid rgba(150, 150, 150, 0.1);
+        border-radius: 50%;
+        font-size: 100px;
+        height: 1em;
+        list-style: outside none none;
+        margin: 0 auto;
+        position: relative;
+        top: 35%;
+        width: 1em;
+        z-index: 2147483647;
+    }
+    .bokeh li {
+        border-radius: 50%;
+        height: 0.2em;
+        position: absolute;
+        width: 0.2em;
+    }
+    .bokeh li:nth-child(1) {
+        animation: 1.13s linear 0s normal none infinite running rota, 3.67s ease-in-out 0s alternate none infinite running opa;
+        background: #00c176 none repeat scroll 0 0;
+        left: 50%;
+        margin: 0 0 0 -0.1em;
+        top: 0;
+        transform-origin: 50% 250% 0;
+    }
+    .bokeh li:nth-child(2) {
+        animation: 1.86s linear 0s normal none infinite running rota, 4.29s ease-in-out 0s alternate none infinite running opa;
+        background: #ff003c none repeat scroll 0 0;
+        margin: -0.1em 0 0;
+        right: 0;
+        top: 50%;
+        transform-origin: -150% 50% 0;
+    }
+    .bokeh li:nth-child(3) {
+        animation: 1.45s linear 0s normal none infinite running rota, 5.12s ease-in-out 0s alternate none infinite running opa;
+        background: #fabe28 none repeat scroll 0 0;
+        bottom: 0;
+        left: 50%;
+        margin: 0 0 0 -0.1em;
+        transform-origin: 50% -150% 0;
+    }
+    .bokeh li:nth-child(4) {
+        animation: 1.72s linear 0s normal none infinite running rota, 5.25s ease-in-out 0s alternate none infinite running opa;
+        background: #88c100 none repeat scroll 0 0;
+        margin: -0.1em 0 0;
+        top: 50%;
+        transform-origin: 250% 50% 0;
+    }
+    @keyframes opa {
+    12% {
+        opacity: 0.8;
+    }
+    19.5% {
+        opacity: 0.88;
+    }
+    37.2% {
+        opacity: 0.64;
+    }
+    40.5% {
+        opacity: 0.52;
+    }
+    52.7% {
+        opacity: 0.69;
+    }
+    60.2% {
+        opacity: 0.6;
+    }
+    66.6% {
+        opacity: 0.52;
+    }
+    70% {
+        opacity: 0.63;
+    }
+    79.9% {
+        opacity: 0.6;
+    }
+    84.2% {
+        opacity: 0.75;
+    }
+    91% {
+        opacity: 0.87;
+    }
+    }
+    
+    @keyframes rota {
+    100% {
+        transform: rotate(360deg);
+    }
+    }
+    
+  

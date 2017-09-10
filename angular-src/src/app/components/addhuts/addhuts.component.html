@@ -1,0 +1,168 @@
+<div class="heading">
+	<h2>Add Your Hut</h2>
+</div>
+<hr>
+
+<form [formGroup]="addHutForm" (ngSubmit)="addHut()">
+
+
+
+	<div class="leftcontact">
+		<div class="form-group">
+			<p>Hut Name<span>*</span></p>
+			<span class="icon-case"><i class="fa fa-male"></i></span>
+			<input type="text" name="nom" id="nom" data-rule="required" [(ngModel)]="name" formControlName="name" />
+
+		</div>
+		<div class="validation">
+			<div *ngIf="addHutForm.controls['name'].hasError('required') && addHutForm.controls['name'].touched" class="alert alert-danger">
+				<span class="glyphicon glyphicon-warning-sign"></span><strong> Please enter your Hut name </strong>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<p>Unit<span>*</span></p>
+			<span class="icon-case"><i class="fa fa-user"></i></span>
+			<input type="text" name="prenom" id="prenom" data-rule="required" formControlName="unit" />
+			<div class="validation"></div>
+		</div>
+		<div class="validation">
+			<div *ngIf="addHutForm.controls['unit'].hasError('required') && addHutForm.controls['unit'].touched" class="alert alert-danger">
+				<span class="glyphicon glyphicon-warning-sign"></span><strong> Please enter your Unit no </strong>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<p>Rooms <span>*</span></p>
+			<span class="icon-case"><i class="fa fa-envelope-o"></i></span>
+			<input type="number" min="1" max="5" name="email" id="email" data-rule="email" formControlName="rooms" />
+			<div class="validation"></div>
+		</div>
+		<div class="validation">
+			<div *ngIf="addHutForm.controls['rooms'].hasError('required') && addHutForm.controls['rooms'].touched" class="alert alert-danger">
+				<span class="glyphicon glyphicon-warning-sign"></span><strong> Please enter no of rooms </strong>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<p>Max person allowed <span>*</span></p>
+			<span class="icon-case"><i class="fa fa-home"></i></span>
+			<input type="number" min="1" max="100" name="persons" id="society" data-rule="required" formControlName="maxPersonAllowed"
+			/>
+			<div class="validation"></div>
+		</div>
+		<div class="validation">
+			<div *ngIf="addHutForm.controls['maxPersonAllowed'].hasError('required') && addHutForm.controls['maxPersonAllowed'].touched" class="alert alert-danger">
+				<span class="glyphicon glyphicon-warning-sign"></span><strong> Please enter allowed no of persons </strong>
+			</div>
+		</div>
+
+
+
+
+	</div>
+
+	<div class="rightcontact">
+
+		<div class="form-group">
+			<p> Address <span>*</span></p>
+			<span class="icon-case"><i class="fa fa-location-arrow"></i></span>
+			<input type="text" name="adresse" id="adresse" data-rule="required" formControlName="address" />
+		</div>
+			<div *ngIf="addHutForm.controls['address'].hasError('required') && addHutForm.controls['address'].touched" class="alert alert-danger">
+				<span class="glyphicon glyphicon-warning-sign"></span><strong> Please enter address </strong>
+			</div>
+
+		<div class="form-group">
+			<p>Location <span>*</span></p>
+			<span class="icon-case"><i class="fa fa-building-o"></i></span>
+			<input type="text" name="location" id="ville" data-rule="required" formControlName="location" />
+		</div>
+			<div *ngIf="addHutForm.controls['location'].hasError('required') && addHutForm.controls['location'].touched" class="alert alert-danger">
+				<span class="glyphicon glyphicon-warning-sign"></span><strong> Please enter location </strong>
+			</div>
+
+		<div class="form-group">
+			<p>Rent<span>*</span></p>
+			<span class="icon-case"><i class="fa fa-building-o"></i></span>
+			<input type="number" name="rent" id="ville" data-rule="required" formControlName="rent" />
+		</div>
+		<div class="validation">
+			<div *ngIf="addHutForm.controls['rent'].hasError('required') && addHutForm.controls['rent'].touched" class="alert alert-danger">
+				<span class="glyphicon glyphicon-warning-sign"></span><strong> Please enter price </strong>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<p>Package Description <span>*</span></p>
+			<span class="icon-case"><i class="fa fa-comments-o"></i></span>
+			<textarea name="message" rows="14" data-rule="required" formControlName="description"></textarea>
+		</div>
+		<div class="validation">
+			<div *ngIf="addHutForm.controls['description'].hasError('required') && addHutForm.controls['description'].touched" class="alert alert-danger">
+				<span class="glyphicon glyphicon-warning-sign"></span><strong> Please enter package description </strong>
+			</div>
+		</div>
+
+		<hr>
+
+		<div class="form-group">
+			<label><span>Choose Image</span><input type="file" id="myFile" (change)="onChange($event)"></label>
+		</div>
+		<div class="validation">
+			<div *ngIf="!upload">
+				<span class="glyphicon glyphicon-warning-sign"></span><strong> Please upload 1 image atleast </strong>
+			</div>
+		</div>
+		<br>
+		
+		<!--<div>
+    <button type="button" (click)="upload(progress,img)">Upload Picture</button>
+</div>-->
+		<!--<div><img src="{{img}}" alt="no img" width="200px" height="300px"></div>-->
+
+		<!--<div>
+      <progress value="0" max="100" #progress>
+</progress>
+</div>-->
+	</div>
+
+	<div class="form-group">
+		<sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="true" (mapClick)="mapClicked($event)">
+
+			<sebm-google-map-marker *ngIf="mapMarker" (markerClick)="clickedMarker(mapMarker)" [latitude]="mapMarker.lat" [longitude]="mapMarker.lng"
+			 [markerDraggable]="mapMarker.draggable" (dragEnd)="markerDragEnd(mapMarker, $event)">
+
+				<sebm-google-map-info-window>
+					<strong>{{name}}</strong>
+				</sebm-google-map-info-window>
+
+			</sebm-google-map-marker>
+		</sebm-google-map>
+	</div>
+
+	<button *ngIf="addHutForm.valid && mapMarker && upload" type="submit" class="btn btn-sm btn-success btn-block">ADD</button>
+	<button *ngIf="!addHutForm.valid || !mapMarker || !upload" type="submit" class="btn btn-sm btn-default btn-block" disabled>ADD</button>
+	
+<br>
+	<div>
+		<flash-messages></flash-messages>
+		
+</div>
+
+
+</form>
+
+<div *ngIf="spinner" class="container">
+	<div class="row">
+            <div id="loading">
+                <ul class="bokeh">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+	</div>
+</div>
+
+

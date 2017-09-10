@@ -1,0 +1,73 @@
+<div class="heading">
+  <h2 >Google Map</h2>
+</div>
+
+<hr> <br>
+
+<div *ngIf="!spinner" class="container">
+		<sebm-google-map #gm
+[latitude]="lat" 
+[longitude]="lng"
+[zoom]="zoom"
+[disableDefaultUI]="false"
+[zoomControl]="true"
+>
+
+  <sebm-google-map-marker *ngFor="let hut of huts; let i=index"
+  (markerClick)="clickedMarker(hut.id);gm.lastOpen?.close(); gm.lastOpen = infoWindow" 
+  [latitude]="hut.latitude" 
+  [longitude]="hut.longitude"
+  [markerDraggable]="false">
+
+  <sebm-google-map-info-window #infoWindow>
+    <h1>Beach huts</h1>
+    <label>Name:</label>  {{hut.name}} <br>
+    <label>Unit:</label>  {{hut.unit}} <br>
+    <label>Rooms:</label>  {{hut.rooms}} <br>
+    <label>Desciption:</label>  {{hut.description}} <br>
+    <label>Rent:</label>  {{hut.rent}} <br>
+
+    <form>
+    <button class="btn btn-primary btn-sm" (click)="flag = true">Write a review</button> <br><br>
+      <div *ngIf="flag === true" class="col-lg-10 form-group">
+        <textarea class="form-control" rows="3" id="textArea" #message></textarea>
+      <div><button type="button" class="btn btn-primary btn-xs" (click)="submitReview(message, hut.id)">Submit Review</button></div>
+        
+      </div>
+
+    </form>
+    <div>
+     <!--<img src="https://cdn.pixabay.com/photo/2016/10/07/13/00/yucca-plant-1721515__340.jpg" class="img-responsive img-circle"  alt="John Doe" width="40px" height="35px">-->
+     <div  *ngFor="let review of reviews; let i=index">
+       <p>{{review}}</p>
+       <hr>
+     </div>
+
+      </div> 
+
+      <!--<h5>Images</h5>-->
+      <!--<div>
+        <img *ngFor="let img of images; let i=index" src="data:image/jpeg;base64,{{img}}" class="img-rounded" alt="Cinque Terre" width="80" height="50"> 
+        </div> -->
+  </sebm-google-map-info-window>
+  
+  </sebm-google-map-marker>
+</sebm-google-map>
+  </div>
+
+
+  <div *ngIf="spinner" class="container">
+    <div class="row">
+              <div id="loading">
+                  <ul class="bokeh">
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                  </ul>
+              </div>
+    </div>
+  </div>
+  
+
+
+  

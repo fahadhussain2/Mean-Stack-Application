@@ -1,0 +1,82 @@
+ <div class="container">
+
+        <!-- Portfolio Item Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">{{hutObj.name}}
+                    <small><strong>{{hutObj.rent}}</strong> Rs</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Portfolio Item Row -->
+        <div class="row">
+
+            <div class="col-md-8">
+                <img *ngIf="imgURI[0]" class="img-responsive" [src]="'data:image/jpeg;base64,'+imgURI[0].base64" alt="a">
+            </div>
+
+            <div class="col-md-4">
+       
+
+      <div class="list-group">
+  <a class="list-group-item">
+    <label>Name: </label><span>{{hutObj.name}}</span>
+  </a>
+  <a class="list-group-item">
+      <label>Unit: </label><span>{{hutObj.unit}}</span>
+  </a>
+  <a class="list-group-item">
+      <label>Rooms: </label><span>{{hutObj.rooms}}</span>
+  </a>
+  <a class="list-group-item">
+      <label>max person allowed: </label><span>{{hutObj.maxPersonAllowed}}</span>
+  </a>
+  <a class="list-group-item">
+      <label>address: </label><span>{{hutObj.address}}</span>
+  </a>
+  <a class="list-group-item">
+      <label>location: </label><span>{{hutObj.location}}</span>
+  </a>
+  <a class="list-group-item">
+      <label>rent: </label><span>{{hutObj.rent}}</span><br>
+  </a>
+  <a class="list-group-item">
+      <label>description: </label><span>{{hutObj.description}}</span>
+  </a>
+    
+    
+  </div>
+
+            </div>
+
+        </div>
+        <hr>
+        <div class="col-lg-12">
+            <div>
+                <input type="date" name="booking" (change)="onChange($event)" #date>              
+                <button  class="btn btn-primary btn-sm" (click)="bookReservation(date)" [disabled]="!flag">Book</button>
+            </div>
+        </div> 
+            
+        <!-- /.row -->
+
+        <!-- Related Projects Row -->
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h3 class="page-header">Images</h3>
+            </div>
+
+            <div class="col-sm-3 col-xs-6" *ngFor="let images of imgURI; let i=index">
+                <a>
+                    <img class="img-responsive portfolio-item" [src]="'data:image/jpeg;base64,'+images.base64" alt="">
+                </a>
+            </div>
+
+
+        </div>
+ </div>
+
+ <br><br><br>

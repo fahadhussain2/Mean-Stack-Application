@@ -1,0 +1,33 @@
+<div class="row">
+    <flash-messages></flash-messages>
+</div>
+
+<div class="row">
+            <div class="heading">
+                <h2>My Huts</h2>
+            </div>
+        </div>
+        <hr>
+        <!-- /.row -->
+
+        <!-- Page Features -->
+        <div class="row text-center">
+
+            <div class="col-md-3 col-sm-6 hero-feature" *ngFor="let myhuts of myHuts; let i=index">
+                <div class="thumbnail">
+                    <img [src]="'data:image/jpeg;base64,'+myhuts.base64Img[0]" height="800" width="500">
+                    <div class="caption">
+                        <h3>{{myhuts.name}}</h3>
+                        <label>Unit: </label><span>{{myhuts.unit}}</span> <br>
+                        <label>Description: </label><span>{{myhuts.description}}</span>
+                        <p>
+                            <a class="btn btn-danger" (click)="delete(myhuts, i)">Delete</a>
+                            <a class="btn btn-default"(click)="update(myhuts, i)">Edit</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            
+
+        </div>  
