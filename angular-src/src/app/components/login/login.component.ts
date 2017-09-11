@@ -29,7 +29,9 @@ export class LoginComponent implements OnInit {
       if(data.success){
         this.authService.storeUserData(data.token, data.user);
         this.flashmessages.show('you are logged in', {cssClass: 'alert-success', timeout:3000 });
-        this.route.navigate(['home']);
+        setTimeout(()=> {
+        this.route.navigate(['map']);        
+        }, 1000);
       }
       else{
         this.flashmessages.show(data.msg, {cssClass: 'alert-danger', timeout: 3000})
