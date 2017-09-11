@@ -12,12 +12,14 @@ export class MyhutsComponent implements OnInit {
 
   myHuts: Array<any>;
   imgURI: Array<any> = [];
+  spinner: boolean = true;
 
   constructor(private router: ActivatedRoute, private hutService: HutsService, private route: Router, public flashMessages: FlashMessagesService) {
     hutService.getUserHuts().subscribe(huts => {
         console.log('my huts', huts.myHut)
         if(huts.success){
-          this.myHuts = huts.myHut
+          this.myHuts = huts.myHut;
+          this.spinner = false;
           this.flashMessages.show('you have posted ' + this.myHuts.length + ' hut' , {cssClass: 'alert-success', timeout:3000 });
         }
         else{
