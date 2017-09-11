@@ -23,6 +23,7 @@ export class MyhutsComponent implements OnInit {
           this.flashMessages.show('you have posted ' + this.myHuts.length + ' hut' , {cssClass: 'alert-success', timeout:3000 });
         }
         else{
+          this.spinner = false;
           this.flashMessages.show(huts.msg , {cssClass: 'alert-danger', timeout:3000 });          
         }
     })
